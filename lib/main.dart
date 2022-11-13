@@ -11,3 +11,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp();
   }
 }
+
+class hotcookCalculator extends StatefulWidget {
+  const hotcookCalculator({super.key});
+
+  @override
+  State<hotcookCalculator> createState() => _hotcookCalculatorState();
+}
+
+class _hotcookCalculatorState extends State<hotcookCalculator> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold();
+  }
+}
