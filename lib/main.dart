@@ -29,6 +29,24 @@ class _hotcookCalculatorState extends State<hotcookCalculator> {
       appBar: AppBar(
         title: Text('煮物塩分濃度計'),
       ),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 100,
+              width: 100,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "鍋の重さ",
+                hintText: "まぁ何か入力してみてよ！",
+              ),
+            ),
+            Text('結果'),
+          ],
+        ),
+      ),
     );
   }
 }
