@@ -27,7 +27,7 @@ class _hotcookCalculatorState extends State<hotcookCalculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('煮物塩分濃度計'),
+        title: Text('ホットクック塩分量算出計'),
       ),
       body: Center(
         child: Column(
@@ -39,11 +39,12 @@ class _hotcookCalculatorState extends State<hotcookCalculator> {
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: "鍋の重さ",
-                hintText: "まぁ何か入力してみてよ！",
+                labelText: "総重量",
+                hintText: "入力してください",
               ),
             ),
-            Text('結果'),
+            Text('- 鍋の重さ(680g)'),
+            Text(' = 結果'),
           ],
         ),
       ),
