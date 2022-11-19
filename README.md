@@ -1,4 +1,4 @@
-# hotcookcalculator
+# HotcookCalculator
 
 A new Flutter project.
 

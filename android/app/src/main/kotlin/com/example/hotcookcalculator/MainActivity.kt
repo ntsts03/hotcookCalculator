@@ -1,4 +1,4 @@
-package com.example.hotcookcalculator
+package com.example.HotcookCalculator
 
 import io.flutter.embedding.android.FlutterActivity
 

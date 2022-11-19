@@ -9,43 +9,43 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: hotcookCalculator(),
+    return const MaterialApp(
+      home: HotcookCalculator(),
     );
   }
 }
 
-class hotcookCalculator extends StatefulWidget {
-  const hotcookCalculator({super.key});
+class HotcookCalculator extends StatefulWidget {
+  const HotcookCalculator({super.key});
 
   @override
-  State<hotcookCalculator> createState() => _hotcookCalculatorState();
+  State<HotcookCalculator> createState() => _HotcookCalculatorState();
 }
 
-class _hotcookCalculatorState extends State<hotcookCalculator> {
+class _HotcookCalculatorState extends State<HotcookCalculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ホットクック塩分量算出計'),
+        title: const Text('ホットクック塩分量算出計'),
       ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 100,
               // width: 100,
             ),
             TextFormField(
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-              fillColor: Colors.white,
-              filled: true,
-          ),
-          onFieldSubmitted: (weight) {
-            print(weight);
-          },
-        ),
+                fillColor: Colors.white,
+                filled: true,
+              ),
+              onFieldSubmitted: (weight) {
+                print(weight);
+              },
+            ),
             Text('- 鍋の重さ(680g)'),
             Text(' = 結果'),
           ],
