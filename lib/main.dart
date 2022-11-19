@@ -34,15 +34,17 @@ class _hotcookCalculatorState extends State<hotcookCalculator> {
           children: [
             SizedBox(
               height: 100,
-              width: 100,
+              // width: 100,
             ),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: "総重量",
-                hintText: "入力してください",
-              ),
-            ),
+            TextFormField(
+          decoration: InputDecoration(
+            fillColor: Colors.white,
+            filled: true,
+          ),
+          onFieldSubmitted: (text) {
+            print(text);
+          },
+        ),
             Text('- 鍋の重さ(680g)'),
             Text(' = 結果'),
           ],
