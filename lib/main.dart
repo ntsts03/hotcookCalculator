@@ -37,12 +37,13 @@ class _hotcookCalculatorState extends State<hotcookCalculator> {
               // width: 100,
             ),
             TextFormField(
-          decoration: InputDecoration(
-            fillColor: Colors.white,
-            filled: true,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+              fillColor: Colors.white,
+              filled: true,
           ),
-          onFieldSubmitted: (text) {
-            print(text);
+          onFieldSubmitted: (weight) {
+            print(weight);
           },
         ),
             Text('- 鍋の重さ(680g)'),
