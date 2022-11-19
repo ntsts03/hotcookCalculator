@@ -38,7 +38,7 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
             ),
             TextFormField(
               keyboardType: TextInputType.number,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 fillColor: Colors.white,
                 filled: true,
               ),
@@ -46,8 +46,8 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
                 print(weight);
               },
             ),
-            Text('- 鍋の重さ(680g)'),
-            Text(' = 結果'),
+            const Text('- 鍋の重さ(680g)'),
+            const Text(' = 結果'),
           ],
         ),
       ),
