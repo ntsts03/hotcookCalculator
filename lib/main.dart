@@ -23,9 +23,13 @@ class HotcookCalculator extends StatefulWidget {
 
 class _HotcookCalculatorState extends State<HotcookCalculator> {
   double weight = 0;
+  String soltWeight = '〇〇';
+
+
 
   void soltcalc(double weight) {
-    weight = weight * 0.006;
+    // ignore: unused_local_variable
+    soltWeight = (weight * 0.006).toString();
   }
 
   @override
@@ -47,13 +51,14 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
                 fillColor: Colors.white,
                 filled: true,
               ),
-              onFieldSubmitted: (weight) {
+              onChanged: (weight) {
                 soltcalc(double.parse(weight));
+                setState(() {});
                 print(weight);
               },
             ),
             const Text('- 鍋の重さ(680g)'),
-            const Text(' = 結果'),
+            Text('塩の量は${soltWeight.toString()}g'),
           ],
         ),
       ),
