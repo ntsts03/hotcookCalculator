@@ -17,24 +17,29 @@ class MyApp extends StatelessWidget {
 
 class HotcookCalculator extends StatefulWidget {
   const HotcookCalculator({super.key});
-
   @override
   State<HotcookCalculator> createState() => _HotcookCalculatorState();
 }
 
 class _HotcookCalculatorState extends State<HotcookCalculator> {
+  double weight = 0;
+
+  void soltcalc(double weight) {
+    weight = weight * 0.006;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ホットクック塩分量算出計'),
+        title: const Text('ホットクック塩分量計'),
       ),
       body: Center(
         child: Column(
           children: [
             const SizedBox(
               height: 100,
-              // width: 100,
+              width: 100,
             ),
             TextFormField(
               keyboardType: TextInputType.number,
@@ -43,6 +48,7 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
                 filled: true,
               ),
               onFieldSubmitted: (weight) {
+                soltcalc(double.parse(weight));
                 print(weight);
               },
             ),
