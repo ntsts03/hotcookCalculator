@@ -43,11 +43,8 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
       ),
       body: Center(
         child: Column(
+            mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(
-              height: 100,
-              width: 100,
-            ),
             TextFormField(
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
