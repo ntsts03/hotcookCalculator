@@ -30,6 +30,7 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
   void foodWeightCalc(double allWeight) {
     foodWeight = allWeight - podWeight;
   }
+
   void soltWeightCalc(double foodWeight) {
     // ignore: unused_local_variable
     soltWeight = (foodWeight * 0.006).toStringAsFixed(1);
@@ -43,7 +44,7 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
       ),
       body: Center(
         child: Column(
-            mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.min,
           children: [
             TextFormField(
               keyboardType: TextInputType.number,
@@ -58,8 +59,29 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
                 print(allWeight);
               },
             ),
-            const Text('鍋の重さ(680g)'),
-            Text('塩の量は${soltWeight}gです'),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              '鍋の重さ(680g)',
+              style: TextStyle(fontSize: 18),
+            ),
+            RichText(
+              text: TextSpan(
+                style: const TextStyle(color: Colors.black, fontSize: 20),
+                children: [
+                  const TextSpan(text: '塩の量は'),
+                  TextSpan(
+                    text: '${soltWeight}g',
+                    style: const TextStyle(
+                      fontSize: 30,
+                      // fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const TextSpan(text: 'です'),
+                ],
+              ),
+            ),
           ],
         ),
       ),
