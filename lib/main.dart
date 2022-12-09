@@ -43,46 +43,49 @@ class _HotcookCalculatorState extends State<HotcookCalculator> {
         title: const Text('ホットクック塩分量計'),
       ),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextFormField(
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
-                fillColor: Colors.white,
-                filled: true,
+        child: Container(
+          margin: const EdgeInsets.all(50),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextFormField(
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  hintText: '食材＋鍋の重さを入力して下さい',
+                  fillColor: Colors.yellow,
+                  filled: true,
+                ),
+                onFieldSubmitted: (allWeight) {
+                  foodWeightCalc(double.parse(allWeight));
+                  soltWeightCalc(foodWeight);
+                  setState(() {});
+                },
               ),
-              onChanged: (allWeight) {
-                foodWeightCalc(double.parse(allWeight));
-                soltWeightCalc(foodWeight);
-                setState(() {});
-                print(allWeight);
-              },
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text(
-              '鍋の重さ(680g)',
-              style: TextStyle(fontSize: 18),
-            ),
-            RichText(
-              text: TextSpan(
-                style: const TextStyle(color: Colors.black, fontSize: 20),
-                children: [
-                  const TextSpan(text: '塩の量は'),
-                  TextSpan(
-                    text: '${soltWeight}g',
-                    style: const TextStyle(
-                      fontSize: 30,
-                      // fontWeight: FontWeight.bold,
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                '鍋の重さ(680g)',
+                style: TextStyle(fontSize: 18),
+              ),
+              RichText(
+                text: TextSpan(
+                  style: const TextStyle(color: Colors.black, fontSize: 20),
+                  children: [
+                    const TextSpan(text: '塩の量は'),
+                    TextSpan(
+                      text: '${soltWeight}g',
+                      style: const TextStyle(
+                        fontSize: 30,
+                        // fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const TextSpan(text: 'です'),
-                ],
+                    const TextSpan(text: 'です'),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
